@@ -1,0 +1,869 @@
+DEĞİŞKEN TÜRLERİ
+####SAYILAR VE STRINGLERE (Karakter Dizilerine) GIRIS
+#print ve type fonksiyonu
+
+9 # (integer)
+9.2 # (float)
+9+9
+9*9
+
+
+print('HELLO AI ERA')
+print("HELLO AI ERA")
+"HELLO AI ERA"
+
+#String (karakter dizisi) için tek tırnak veya çift tırnak kullanabiliriz.
+#Ekrana çıktı olarak basmak için print komutunu kullanırız. 
+#Diğer türlü seçilen kısmı çalıştır dediğimizde ekrana yazar ama derlenmiş
+#paket programı play tuşuna basarak çalıştır dediğimizde yalnızca print 
+#komutu içerisindekileri ekrana basar.
+
+
+
+#****type fonksiyonu nesnenin tipini döndürür.*****
+type(9)
+type(9.2)
+type("HELLO AI ERA")
+
+
+####STRINGLERE YAKINDAN BAKALIM
+# Python "" veya '' içerisindeki ifadeleri string olarak algılar.
+""
+''
+
+123
+type(123)
+
+"123"
+type("123")
+
+"a" + "b" # + işareti iki stringi yan yana koymak için kullanılır.
+"a" "b" # + işaretini koymadan da iki stringi birleştirebiliriz.
+"a" " b"  # İki ifade bir araya getirildiğinde aralarında boşluk ile birleştirilmiş oldu.
+"a"  "-b" # İki ifade bir araya getirildiğinde aralarında - işareti ile birleştirilmiş oldu.
+
+#"a" - "b" #Çalıştırdığımızda hata alırız. Tip hatası. Çıkarma işlemi sayısal ifadeler arasında olur stringler arasında değil.
+
+"a"*3 # * ifadesi string ifadeyi çoğaltmak için kullanılır.
+"a "*3 # birer boşluk ile a karakterini çoğalttık.
+"a"/3 #Çalıştırdığımızda tip hatası alırız.
+
+# + ve * operatörleri stringlerle kullanılır sırasıyla birleştirme ve çoğaltma işlemlerini gerçekleştirirler.
+
+####STRING METODLARI - len()
+
+gel_yaz = "gelecegi_yazanlar" #string ifadeyi = operatörü ile bir değişkene atıyoruz
+#del mvk  #önceden tanımlanmış mvk isimli değişkeni siler
+
+
+len(gel_yaz)  #string boyutunu verir. Karakter sayısını yazar.
+len("gelecegi_yazanlar")
+
+
+#####STRING METODLARI - upper() & lower()
+#upper() string ifadeyi komple büyük harfe dönüştürür
+#lower() string ifadeyi komple küçük harfe dönüştürür
+
+gel_yaz = "gelecegi_yazanlar"
+
+#gel_yaz. #noktayı koyduğumuz anda o stringe ait kullanabileceğimiz fonksiyonları bize sunar
+gel_yaz.upper()
+gel_yaz.lower()
+
+
+
+#Gelen bir ifadenin küçük harf mi büyük harf mi olduğunu bilemeyebiliriz, bunu programa yaptırmak isteyebilriz.
+gel_yaz.islower() #Gelen ifade küçük harflerden mi oluşuyora cevap verir. True veya False döndürür.
+B = gel_yaz.upper() #Karakterleri büyümüş olan ifadeyi B değişkenine atar
+
+B.islower()
+B.isupper() #Gelen ifade büyük harflerden mi oluşuyora cevap verir. True veya False döndürür.
+
+
+
+#####STRING METODLARI - replace()
+#replace() elimizdeki stringler içerisinde karakterler ile ilgili değişiklik yapmak istediğimizde kullanılır.
+gel_yaz = "gelecegi_yazanlar"
+
+gel_yaz.replace("e","a") #gelecegi_yazanlar stringi içerisindeki (neyi değiştireceğiz) e karakterlerini, (neyle değiştireceğiz) a karakterleri ile. 
+                  #Bu metod atama yapmadığımız durumda nesne orjinalinde değişikliğe neden olmaz. Bazı metodlar atama işlemi yapılmasa dahi orjinal nesne üzerinde değişiklik yaparlar.
+gel_yaz
+gel_yaz.replace("a","i")
+
+
+
+#####STRING METODLARI - strip()
+#string içerisinde istenmeyen karakterleri kırpmak için kullanılır.
+
+gel_yaz = " gelecegi_yazanlar " 
+
+#stringlerin içerisindeki boşluklardan kurtulmak isteyelim
+gel_yaz.strip() #fonksiyon içi boş olduğu için string içerisindeki boşlukları kırpar. Fonksiyonun ön tanımlı argümanı boşluktur zaten. 
+
+gel_yaz = "*gelecegi_yazanlar*"
+gel_yaz.strip("*") #string içerisindeki *'ları kırpar.
+
+gel_yaz = "lgelecegi_yazanlarl"
+gel_yaz.strip("l") #string içerisindeki l'leri kırpar.
+
+
+#####METODLARA GENEL BAKIS
+#Tüm metodlara nasıl erişiriz, ihtiyacımız olan metodu nasıl öğrenebiliriz? Kendi ihtiyacımıza göre nasıl metod araması yapacağız?
+gel_yaz = "gelecegi_yazanlar"
+
+#dir python da üzerinde çalıştığımız veri tipine uygulanabilecek olan metodları görmek için kullanılır
+dir(gel_yaz) #elimizdeki veri tipine uygulanabilecek tüm metodları listeler. dir(str) olarak da kullanılabilir.
+             #gel_yaz. diyerek de kullanılabilecek fonksiyonları görebiliriz.
+             
+#dir(str)
+
+gel_yaz.capitalize() #ilk harfleri büyütmek için kullanılır
+gel_yaz.title() #herbir kelimenin baş harfini büyütür.
+
+
+#####SUBSTRINGLER
+#Karakter dizilerinin alt bileşenlerine erişmek istediğimizde kullanırız.
+
+gel_yaz = "gelecegi_yazanlar"
+
+gel_yaz[0] #karakter dizisinin 0. indisindeki değeri alır
+
+gel_yaz[1] #karakter dizisinin 1. indisindeki değeri alır
+
+gel_yaz[20] #içerisinde belirtilen indis string boyutundan büyük olduğu için hata verir.
+
+gel_yaz[0:3] # 0'dan 3'e kadar olan tüm karakterleri yazar.(Sol taraftaki indeks ifadesi yani 0 dahil, sol taraftaki yani 3 dahil değil anlamına gelir )
+             #sol taraf dahil sağ taraf her zaman e kadar. 0'dan 3'e kadar
+             
+###python [] ifadesini gördüğünde python köşeli parantezden önce girilen ifadenin içerisinden seçim yapmak istediğimizi anlar.
+
+DEĞİŞKENLER
+####DEGISKENLER
+#degişken isimleri verirken python da yer almayan isimleri vermek gerekir. Örneğin type diye isim veremeyiz çünkü type isimli fonksiyon var ileride problam olabilir.
+a = 9 #değişken tanımlama
+b = "ali_uzaya_git"
+
+#atama işlemi yaptığımız değişkenler üzerinden işlemler yapabiliriz
+c = a*2
+
+
+a/c
+a*c
+a*5
+
+type(100) #type() metodu değişken tipini döndürür
+type(100.2)
+type(1+2j)
+
+a = 100.2  #değişken tanımlama, tipi float
+
+####TYPE_DONUSUMLERI
+#değişkenlerin tipleri arasında dönüşüm yapmak gerekebilir.
+toplama_bir = input() #kullanıcıdan input() ile girdi alınır. Bu fonksiyon ile kullanıcıdan alınan bilgi her zaman string tipindedir.
+toplama_iki = input()
+
+type(toplama_bir) #çalıştıralım ilk girdinin tipini görelim
+
+toplama_bir + toplama_iki #string türünde aldığı için iki ifadeyi string anlamında birleştirdi. Matematiksel olarak iki sayıyı nümerik olarak toplamadı.
+
+int(toplama_bir) + int(toplama_iki) #Matematiksel anlamda topladı
+
+#Nesnenin önüne dönüştürmek istediğimiz type'ı yazıyoruz. Nesneyi o type içerisindeki parantez içerisine alıyoruz.
+
+int(11.0)
+
+12 #elimizde integer sayı var foloat şekilde görmek istiyoruz
+
+float(12)
+
+type(str(12))
+
+####Kod Çıktısını Ekrana Yazdırma
+#print()
+
+print("HELLO AI ERA")
+
+print("gelecegi","yazanlar") #iki string kelimeyi birleştirerek yazar
+
+print("gelecegi","yazanlar", sep = "_") #iki string kelimeyi _ ile birleştirir sep argümanı sayesinde
+print()
+print() #sol parantezi girdiğimiz anda print metodunun alacağı argümanları gösterir.
+print()
+
+#Fonksiyonların argümanlarına (o fonksiyonu biçimlendirecek özellikler) erişmek istediğimizde fonksiyonu yazıp sol parantezi girdiğimizde ulaşabiliriz.
+
+type()
+
+print()
+
+#?print
+
+LİSTELER
+####VERI YAPILARI
+#Programlama dillerinin kullandığı özel yapılardır.
+
+####Listeler 
+    #Sıralıdırlar, yani indeks işlemleri yapılabilir.
+    #Kapsayıcıdırlar, yani listeler birbirinden farklı tipleri barındırabilirler
+    #Değiştirilebilirler
+
+#Ptyhon da iki şekilde liste oluşturulabilir
+
+#1.Yol; [] 
+#2. Yol; list()
+
+notlar = [90,80,70,50] #bir sınıftaki 4 öğrencinin notlarını listede tutmak istiyoruz
+type(notlar) #Çalıştırdığımızda  tipi liste (veri yapısı) olarak görülecektir
+
+liste = ["a",19.3,90] # Birbirinden farklı tipte verileri içeren bir liste oluşturmuş olalım
+list_genis = ["a",19.3,90, notlar] #Liste içerisinde liste tanımlanabildiğine dikkat edelim, farklı veri yapıları tiplerini de barındırabilir
+
+len(list_genis)
+
+#Liste içi Tip Sorgulama
+list_genis[0] #köşeli parantez ile ulaşmak istediğimiz elemanın indeksini yazarak liste içi elemana erişiriz.
+list_genis[1]
+list_genis[3]
+
+type(list_genis[0])
+type(list_genis[1])
+type(list_genis[3])
+
+tum_liste = [liste, list_genis] #Elimizdeki iki listeyi [] ile birleştirebiliriz.
+len(tum_liste)
+
+#del tum_liste #oluşturduğumuz listeyi del listeismi şeklinde silebiliriz.
+
+####Listeler - Eleman Islemleri
+
+#Liste elemanına erişmenin yolu []'dir.
+
+liste = [10,20,30,40,50]
+
+liste[0]
+liste[1]
+
+liste[6] #Liste indeksi dışında indeks yazdığımız için indeks hatası aldık.
+
+liste[0:2] #aralıklar vererek liste elemanlarına ulaşabiliriz. 0'dan 2'ye kadar, 0 dahil 2 değil.
+
+liste[:2] #0. indisten belirtilen indise kadar demektir
+
+liste[2:] #2. indisten sona kadar demektir
+
+yeni_liste = ["a",10,[20,30,40,50]]#Farklı tipteki verilerden oluşan bir liste (veri yapısı) olsun
+yeni_liste
+
+yeni_liste[3] #hata verecektir. liste içerisindeki liste tek bir eleman olarak görünür
+yeni_liste[2]
+
+yeni_liste[0:2]
+
+yeni_liste[2][1] #listenin içindeki listedeki elemana erişme. Öncelikle içerideki listenin indeksini vererek listeye ulaşırız. Sonra o listedeki ulaşmak istediğimiz elemanın indeksini veririz.
+
+
+#Listeler - Eleman Degistirme
+#del liste
+liste = ["ali","veli","berkcan","ayse"]
+liste
+
+liste[1]
+liste[1] = "velinin_babasi" #listedeki veli değerini 'velinin babası' ifadesi ile değiştirir.
+                            #Önce veliye ulaşmak gerekir. Veli 1. indekste olduğu için listenin 1. elemanına yeni ifadeyi atarız.
+
+liste
+
+liste #atama yapıldığı için görüldüğü üzere yapılan değişiklik nesnenin orjinalinde oldu
+
+liste[1] = "veli"
+
+liste[0:3] = "alinin_babasi","velinin_babasi","berkcanin_babasi"  # 0'dan 3'e kadar. ilk 3 elemanı değiştirdi, son eleman için yeni bir değer girilmediği için aynen bıraktı
+
+liste
+
+liste = ["ali","veli","berkcan","ayse"]
+liste
+
+liste + ["kemal"]
+
+liste = liste + ["kemal"] #listeye yeni bir eleman ekleme
+liste
+
+del liste[2] #liste içerisinde istenilen indisteki elemanı silme
+liste
+#yapılan işlemler listenin orjinalini değiştirdiği için işlem yaparken dikkatli olmalıyız.
+
+
+####Listeler - Liste Metodları
+del liste
+
+liste = ["ali","veli","isik"]
+
+dir(liste) #listelerle ilgili metotları listeler (_'siz olanlar metodlardır)
+
+liste
+
+
+
+
+#append & remove (metodlar ile eleman ekleme çıkarma)
+
+liste.append("berkcan") #liste sonuna eleman ekler
+                        #liste değiştirilebilir bir veri yapısı olduğu için metot ile direk liste üzerinde işlem yapabildik. 
+                        #Yeniden atama işlemi yapmadan kalıcı değişiklik yaptık.
+
+liste
+
+liste.remove("berkcan") #berkcan listeden silindi
+liste
+
+# insert 
+#indekse göre eleman eklemek için kullanılmaktdır
+
+liste = ["ali","veli","isik"]
+
+liste
+
+liste.insert(0,"ayse") #0. indekse 'ayse' elemanını ekle
+liste
+
+liste = ["ali","veli","isik"]
+liste[0] = "ayse" #insert ile aynı işlevi gerçekleştirir mi?
+liste
+
+#liste[0]='ayse' demiş olsaydık 0. indise 'ayse' eklenmez, 0. idisdeki 'ali' 'ayse' olarak değiştirilir.
+
+
+liste.insert(0,"ayse")
+liste
+
+liste[1] = "ali"
+
+liste
+
+liste.insert(2,"mehmet") #ikinci indekse 'mehmet' eklendi
+liste
+
+liste.insert(5,"berk") #listenin sonuna eleman eklendi
+liste
+
+#sona eleman eklemek için kaç eleman olduğunu sayacak mıyız?
+#Öyle bir işlem olsunki listenin sonuna elemanları saymadan ekleyelim
+
+len(liste) #liste boyutunu al
+
+
+liste.insert(len(liste),"beren") #liste boyutunu indeks olarak kullan. Böylece liste sonuna eleman eklemiş olduk
+liste
+
+#pop 
+#listeden eleman silmek için kullanılan bir metod
+
+liste.pop(0) #0. indeksteki elemanı sil
+liste
+
+liste.pop(4)  #4. indeksteki elemanı sil
+liste
+
+
+# =============================================================================
+# del liste[0]
+# 
+# liste.pop(0)
+# =============================================================================
+
+#Diğer Liste Metodları
+#count
+#belirtilen liste elemanının frekansını (kaç kez tekrar edildiğini) verir
+liste = ["ali","veli","isik","ali","veli"]
+
+liste.count("ali") 
+liste.count("veli")
+liste.count("isik")
+
+#copy
+#elimizdeki mevcut listeyi kopyalamak, yedeklemek için (ilk halini saklamak istediğimizde) kullanılabilecek bir fonksiyon
+liste_yedek = liste.copy()
+
+#yedek=liste; # bu şekilde yedekleme yapıldığında listenin orjinali değiştirildiğinde yedekte değişmiş olacaktır . Bu nedenle yedekleme işlemini copy komutu ile yapmalıyız.
+
+#extend
+#iki listeyi birleştirmk için kullanılır
+liste.extend(["a","b",10]) #liste ile içerisinde belirtilen listeyi birleştirir. Uygulanan listenin üzerinde kalıcı bir değişiklik yapar
+liste
+
+#index()
+#İçeridinde belirtilen ifadenin hangi indekste olduğu bilgisini verir
+
+liste.index("ali")
+
+
+#reverse()
+#liste elemanlarını terse çevirir
+liste.reverse()
+liste
+
+#sort()
+#liste elemanlarını küçükten büyüğe sıralar
+liste = [10,40,5,90]
+liste.sort()
+liste
+
+
+liste =['a', 'c', 'e', 'b', 'd']
+liste.sort()
+
+
+#clear
+#liste içeriğini temizler
+liste.clear()
+liste
+
+TUPLE
+####Veri Yapıları - Tuple
+#Veri yapılarından birisidir
+    #Kapsayıcıdırlar yani birden fazla veri tipini içerebilirler
+    #Sıralıdırlar, yani indeks işlemleri yapılabilir
+    #Değiştirilemezler. Listelerden en önemli farkı değiştirilemez olmasıdır
+
+#Tuple Olusturma
+#üç şekilde tuple oluşturulabilir
+#1. Yol () ile;
+t = ("ali","veli",1,2,3.2,[1,2,3,4]) #kapsayıcıdırlar, farklı tipteki verileri içerebilirler
+
+#2. Yol parantezsiz;
+t = "ali","veli",1,2,3.2, [1,2,3,4]
+
+#tuple() # 3. yol bu şekilde de tuple() metodu ile oluşturulabilir
+t=("eleman")
+type(t)
+
+t = ("eleman",) #tek elemanlı tuple oluştururken sonuna virgül atmak gerekir
+type(t)
+
+
+####Tuple Eleman Islemleri
+
+t = ("ali","veli",1,2,3, [1,2,3,4])
+t
+
+t[1] #1. indeksteki elemana erişim  #sıralı olduğu için indeks işlemleri yapılabilir.
+
+t[0:3] #0. indeksten 3. indekse kadar olan elemanlara erişim. 0'dan 3'e kadar
+
+t[2] = 99 #1 değerini 99 ile değiştirmek istiyoruz. Tip hatası alırız. Tuple nesnesi değişikliğe izin vermez, atamaya izin vermez.
+          #değiştirilmesini istemediğimiz veri yapısı istiyorsak tuple kullanırız.
+
+DİCTİONARY
+#### Veri Yapıları - Dictionary (Sözlük)
+     #Kapsayıcıdırlar
+     #Değiştirilebilirler
+     #Sırasızdırlar, liste ve tuple'lardan farklıdır yani indeksleme yapılamaz.
+
+#sözlükler anahtar ifadeler (key) ve anahtar ifadelerinin karşılıklarının (value) tutulduğu veri yapısıdır.
+
+#Sozluk Olusturma {} kullanılır. ilk olarak key değerleri girilir, sonra : konulur ve value değerleri girilir
+#python satır satır çalıştığı için sozlugu tanımladığımız tüm satırları seçip öyle çalıştırdık
+
+sozluk = {"REG" : "Regresyon Modeli",
+          "LOJ" : "Lojistik Regresyon",
+          "CART" : "Classification and Reg"}
+
+sozluk
+
+len(sozluk) #sozluk boyutunu verir
+
+#Value kısmına integer değerde girebiliriz
+sozluk = {"REG" : 10,
+          "LOJ" : 20,
+          "CART" : 30}
+
+sozluk
+
+#Value kısmında liste olabilir
+sozluk = {"REG" : ["RMSE",10],
+          "LOJ" : ["MSE", 20],
+          "CART" : ["SSE",30]}
+
+sozluk
+
+#Key (anahtar) kısmı da integer olabilir
+sozluk = { 10 : "REG",
+           20: "LOJ",
+           30: "CART"}
+
+sozluk
+
+
+
+####Sozluk Eleman Islemleri
+
+sozluk = {"REG" : "Regresyon Modeli",
+          "LOJ" : "Lojistik Regresyon",
+          "CART" : "Classification and Reg"}
+
+
+sozluk[0] #sozluklar sırasız oldugu icin indeksleme ile işlem yapamayız.
+
+sozluk["REG"] #anahtar değeri ile sözlük değerlerine erişebiliriz
+sozluk["LOJ"]
+
+sozluk = {"REG" : ["RMSE",10],
+          "LOJ" : ["MSE", 20],
+          "CART" : ["SSE",30]}
+
+
+#sozluk["REG"][0]
+
+#sozluk yapısı içerisinde sozluk yapısı tanımlayabiliriz
+sozluk = {"REG" : {"RMSE": 10,
+                   "MSE" : 20,
+                   "SSE" : 30},
+
+          "LOJ" : {"RMSE": 10,
+                   "MSE" : 20,
+                   "SSE" : 30},
+                   
+          "CART" : {"RMSE": 10,
+                   "MSE" : 20,
+                   "SSE" : 30}}
+
+sozluk["REG"]
+
+sozluk
+sozluk["REG"]["SSE"]
+
+#Sozluk - Eleman Eklemek & Degistirmek
+
+sozluk = {"REG" : "Regresyon Modeli",
+          "LOJ" : "Lojistik Regresyon",
+          "CART" : "Classification and Reg"}
+
+sozluk["GBM"] = "Gradient Boosting Mac" #Yeni bir anahtar ve değerini ekliyoruz 
+sozluk
+
+sozluk["REG"] = "Coklu Dogrusal Regresyon" #verilen anahtardaki değeri değiştiriyoruz
+sozluk
+#sozlukten sonraki köşeli parantezde belirtilen ifade sozluk içerisinde var ise onun değerini değiştirir.
+
+
+#sozlukten sonra köşeli parantezden sonra sözlük içerisinde var olmayan bir değer girersek bende bu değer yok diye yeni bir key ve value ekler
+sozluk[1]
+sozluk[1] = "Yapay Sinir Aglari"
+
+sozluk
+
+l = [1] #liste tanımlayalım
+l
+
+sozluk[l] = "yeni bir sey" #sozluge key olarak listeyi value olarak stringi eklemeyi deneyelim
+                           #hata aldık. Sozluklerde key değerleri referans  noktası oldukları için sadece sabit değerlerle oluşturabiliriz. String ve integer değerler sabit olduğu için kullanılabiliyor.
+                           #listelerdeki değerler kolayca değişebilir. Değiştirilebilir veri yapısı olan listeler key olarak kullanılamaz.
+                           
+t = ("tuple", 1, 2) #tuple sabit bir veri yapısıdır.
+
+sozluk[t] = "yeni bir sey" # tuple sabit bir veri yapısı değiştirilemez olduğu için sozluge anahtar olarak tuple değer  ekleyebiliriz.
+sozluk
+
+SETLER
+####Veri Yapilari - Setler
+    #kapsayıcıdırlar
+    #Sırasızdır (indeksizdir)
+    #İçerisindeki değerler eşsizdir (tekrar eden değerlerden oluşamaz), bu özellikleri ile hızlıdır
+    #değiştirilebilir
+
+#Eşsiz değerlerden oluşmasını istediğimiz durumlarda ve performans olarak hızlı olunmasını istediğimiz durumlarda kullanırız.
+
+#Set olusturmak
+#set() fonksiyonu kullanırız
+s = set()
+s
+
+#liste ile oluşturulabilir
+l = [1,"a","ali", 123]
+s = set(l)
+s
+
+#tuple ile oluşturulabilir
+t = ("a","ali")
+
+s = set(t)
+s
+
+#Setler eşsiz elemanlardan oluşmalıdır
+ali = "lutfen_ata_bakma_uzaya_git"
+type(ali) #tipini sorguladık
+
+s = set(ali) #Tüm elemanları parçalayarak aldı ve her bir karakteri yalnızca 1 kez aldı
+s
+
+#liste ile yeniden set oluşturalım
+l = ["ali", "lutfen", "ata", "bakma", "uzaya",
+     "git", "git", "ali","git"]
+
+l
+
+s = set(l) #listedeki tekrar eden elemanları yalnızca 1 kez alır
+s
+
+len(s) #Küme eleman sayısı
+
+l[0]
+
+s[0] #tip hatası, set nesnesi indeks işlemini desteklemiyor çünkü setler sırasızdırlar. Elemanlra indkes ile erişemeyiz ancak döngü ile erişebiliriz
+
+#Ayrıca setler eşsiz değerlerden oluştuğu için biz sıra versek dahi o kendine göre eşsiz elemanları alacağı için sırayı bozacaktır, sırasızdır.
+
+# Eleman ekleme & cikarma
+
+l = ["gelecegi","yazanlar"] #liste oluşturalım
+
+s = set(l) #liste üzerinden set oluşturalım
+
+s
+
+dir(s) #set üzerinde kullanılabilecek metodlar
+
+s.add("ile") # ekleme işlemi yapar
+s 
+
+s.add("gelecege_git")
+s
+
+# sırasız olduğu için rastgele bir indekse ekler
+
+s.add("ile")
+s #ile ifadesini zaten içerdiği için hata üretmez ama eklemez
+
+s.add("ali")
+s
+
+s.remove("ali") #set içerisinden eleman silme
+s
+
+s.remove("ali") #zaten içerisnde olmadığı için hata verdi
+
+s.discard("ali") #içinde silinecek birşey bulunmadı ama hata vermez, silinecek eleman olsaydı onu yine remove gibi silerdi
+
+#Sete birden fazla eleman eklemek için;
+
+s.update(["ali", "ayşe"]) 
+
+
+
+####Setler - Klasik Kume Islemleri
+#ctrl+alt+4 ile veya edit--> add block comment ile birden fazla blok yorum satırı haline gelebilir.
+# =============================================================================
+# difference() ile iki kumenin farkini ya da "-" ifadesi
+# intersection() iki kume kesisimi ya da "&" ifadesi
+# union() iki kumenin birlesimi
+# symmetric_difference() ikisinde de olmayanlari.
+# =============================================================================
+
+
+#difference
+
+set1 = set([1,3,5])
+set2 = set([1,2,3])
+
+set1.difference(set2) # set1'de olup set'de olmayan değerleri getirir
+
+set2.difference(set1) #set2'de olup set1'de olmayanı getirir
+
+set1.symmetric_difference(set2) #ikisinde olmayanlar ikisine aynı anda bakıyoruz
+
+set1 - set2 #difference() ile aynı işlemi yapar
+set2 - set1
+
+#intersection & union
+#kesişim ve birleşim
+set1 = set([1,3,5])
+set2 = set([1,2,3])
+
+set1.intersection(set2) #kümelerin kesişimlerini yani aynı olan elemanları verir
+set2.intersection(set1)
+
+
+kesisim = set1 & set2 #intersection() ile aynı işlemi yapar, sonucu kesişim değişkenine atar.
+kesisim
+
+birlesim = set1.union(set2) #kümelerin birleşimini verir. Küme olduğu için her elemanı 1 kez içerir
+birlesim
+
+set1.intersection_update(set2) #set1'in değerlerini değiştirir kesişimde yer alan ifadeler set1'in elemanları olmuş durumda
+set1
+
+
+####Set Sorgu Islemleri
+#
+set1 = set([7,8,9])
+set2 = set([5,6,7,8,9,10])
+
+#iki kumenin kesisiminin bos olup 
+#olmadiginin sorgulanması
+
+set1.isdisjoint(set2) #Kesişimler boş ise True değil ise False döndürür
+
+
+#bir kumenin butun elemanlarinin baska bir kume
+#icerisinde yer alip almadigi
+
+set1.issubset(set2) #Set1'in tüm elemanları Set2'de yer alıyor ise True yer almıyor ise False döndürür
+set2.issubset(set1) #Set2'nin tüm elemanları Set1'de yer alıyor ise True yer almıyor ise False döndürür
+
+#bir kumenin bir diger kumeyi kapsayip kapsamadigi
+
+set2.issuperset(set1) #Set2, set!i kapsıyor mu?
+                      #Kapsıyorsa True, kapsamıyorsa False döndürür
+
+FONKSİYON
+####Fonksiyon Nasil Yazilir?
+#Kare alma işlemi yapan bir fonksiyon yazalım.
+
+4**2 #üs alma işlemini ** ile yapabiliriz. 4'ün 2. dereceden kuvveti
+4**3 #4'ün 3. dereceden kuvvati
+
+def kare_al(x):  #python programına ben bir fonksiyon tanımlıyorum demenin yolu def kullanmaktır.
+    x**2 #yukarıdaki fonksiyon tanımına göre içe doğru bir boşluk konularak yazılır ki yukarıdaki fonksiyon tanımı ile ilişkili olduğu bilinsin
+
+    
+kare_al(5)    #tanımladığımız fonksiyonu çağırıyoruz soldan girdi bırakmayalım ki fonksiyonun içindeki bir işlem gibi algılanmasın
+
+#Bilgi Notuyla Cikti Uretmek
+
+def kare_al(x):
+    print(x**2) #foksiyon sonucunu fonksiyon içerisinde ekrana yazdırdık
+    
+kare_al(5)  
+
+def kare_al(x):
+    print("Girilen Sayinin Karesi:" + str(x**2)) #string ifadeler sadece string ifadelerle birleştirilebileceği için integeri string dönüştürdük
+
+kare_al(3)
+
+def kare_al(x):
+    print("Girilen Sayi:" + 
+          str(x) + 
+          ", Karesi:" +
+          str(x**2))
+
+kare_al(3)
+
+
+#Iki Argumanli Fonksiyon Tanimlamak
+
+def kare_al(x):
+    print(x**2)
+    
+    
+def carpma_yap(x, y):
+    print(x*y)
+    
+carpma_yap(2,3)
+
+
+#On Tanimli Argumanlar
+
+#?print
+
+def carpma_yap(x, y = 1):
+    print(x*y)
+
+carpma_yap(3) #hatasız çalışacaktır çünkü y argümanının ön tanımı var 1
+
+def carpma_yap(x, y = 1):
+    print(x*y)
+
+carpma_yap(3,4) #yine hatasız çalışacaktır. y argümanının ön tanımı var 1 olarak fakat biz o değeri 4 olarak gönderirsek ön tanımı göz ardı eder sorun oluşmaz
+
+
+
+#Argumanlarin Siralamasi
+
+def carpma_yap(x, y = 1):
+    print(x*y)
+
+carpma_yap(y = 2, x = 3) #örneğin fonksiyonun argüman sırasını bilmiyor fakat argüman isimlerini biliyorsak argüman isimlerini belirterek fonksiyona argüman gönderebiliriz. Argümanları sıralamadan bağımsız olarak çalıştırabiliriz.
+
+carpma_yap(2,3) # varsayılan da x birinci argüman, y ikinci argümandır 
+
+
+####Ne Zaman Fonksiyon Yazilir?
+#fonksiyonlar tekrar eden görevleri yerine getirmek ve var olan işleri daha programatik bir şekilde gerçekleştirmek için kullanılır.
+
+#isi, nem, sarj
+#ısı, nem ve şarjı ölçen sokak lambaları olduğunu düşünelim. bir sokak lambasına ilişkin ısı ile nemi toplayıp şarja bölmek gibi bir işlem yaptığımızı düşünelim
+(40+25)/90 #bir sokak lambası ile ilgileniyorsak bu şekilde tanımlayabiliriz. Fakat elimizde 100 lerce binlerde sokak lambasına ilişkin veri varsa her bir sokak lambasına ilişkin bu işlemi tek tek yazmak doğru değildir. 
+
+#Öyle bir fonksiyon tanımlayabilelim ki bu işlemi tüm sokak lambaları için yapsın.
+
+
+def direk_hesap(isi, nem, sarj):
+    print((isi + nem)/sarj)
+
+direk_hesap(25,40,70)
+
+#fonksiyonlar sık terkar eden ya da uzun işlemlerden kurtulmak üzere yazdığımız yapılardır. İhtiyaca binaen yazılır.
+
+#Ciktiyi Girdi Olarak Kullanmak
+
+#fonksiyonların çıktıları direk kullanılmaz return ile döndürülmeldir.
+def direk_hesap(isi, nem, sarj):
+    print((isi + nem)/sarj)
+
+cikti = direk_hesap(25,40,70)
+cikti
+print(cikti)
+
+
+def direk_hesap(isi, nem, sarj):
+    return (isi + nem)/sarj
+
+
+cikti = direk_hesap(25,40,70)
+cikti
+print(cikti)
+direk_hesap(25,40,70)*9 #çıktı girdi olarak kullanılabildi
+
+def direk_hesap(isi, nem, sarj):
+    return #fonksiyon return ifadesine gelince durur altındakini artık çalıştırmaz
+    (isi + nem)/sarj
+
+
+direk_hesap(25,40,70)
+
+####Local ve Global Degiskenler
+
+x = 10 #global değişkenlerdir
+y = 20 #global değişkenlerdir
+z = 40;
+def carpma_yap(x = 2,y = 1): #local değişkenler fonksiyonların içinde fonksiyonların etki alanında tanımladığımız değişkenlerdir
+    global z #global olan z değişkenini kullandığımızı belirtmeliyiz, aksi takdirde fonksiyon içerisinde local bir z değişkeni oluturulup ona değer atanmış gibi davranır ve global z değişkeni üzerinde değişiklik yapmaz
+    z=x
+    return x*y
+
+
+carpma_yap(2,3) #burada local (fonksiyona ait) x ve y değişkenlerini kullanır
+
+z
+print (x*y) #burada global olan x ve y yi kullanır
+
+
+
+#Local Etki Alanindan Global Etki Alanini Degistirmek
+
+
+x = [] #x adında boş bir liste oluşturduk
+#del x
+
+def eleman_ekle(y):
+    x.append(y) #y argümanına gelen değeri listeye eleman olarak ekliyoruz
+    print(str(y) + " ifadesi eklendi")
+
+eleman_ekle("ali")
+
+eleman_ekle("veli")
+
+#fonksiyon ile global değişken olan x listesine eleman ekledik artık liste boş değil iki elemanlı
+
+x 
